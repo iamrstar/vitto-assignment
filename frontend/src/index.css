@@ -104,6 +104,7 @@ h1, h2, h3, h4 {
 .app-main {
   flex: 1;
   width: 100%;
+  min-width: 0;
   padding: 2rem;
   display: flex;
   justify-content: center;
@@ -335,6 +336,8 @@ h1, h2, h3, h4 {
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+  min-width: 0;
 }
 
 .dashboard-header {
@@ -511,8 +514,29 @@ h1, h2, h3, h4 {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .app-main { padding: 1rem; }
-  .controls-bar { flex-direction: column; }
+  .app-main { padding: 1rem 0.5rem; }
+  .app-header { padding: 1rem; }
+  
+  .dashboard-container { padding: 1rem 0.5rem; gap: 1rem; }
+  .dashboard-header h1 { font-size: 1.5rem; }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .stat-card {
+    padding: 1rem;
+  }
+  .stat-card h3 {
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+  }
+  .stat-card .stat-value {
+    font-size: 1.3rem;
+  }
+
+  .controls-bar { flex-direction: column; gap: 1rem; }
+  .search-box, .filter-box { width: 100%; }
   .search-box input, .filter-box select { width: 100%; min-width: auto; }
   
   .form-wrapper {
